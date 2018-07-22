@@ -11,4 +11,6 @@ const handler = async (ctx, next) => {
   }
 }
 
-module.exports = handler
+export {
+  handler
+}

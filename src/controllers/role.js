@@ -1,6 +1,9 @@
-const roleModel = require('../models/role')
+import models from '../models/index'
+import {isEmptyStr} from '../util/format'
+
+
+const roleModel = models.role
 const role = new roleModel()
-const isEmptyStr = require('../util/format').isEmpStr
 
 const getRole = async ctx => {
   ctx.body = ctx.query && (await role.findRoleById(ctx.query))
@@ -13,6 +16,7 @@ const updateRole = async ctx => {
   }
 }
 
-module.exports = {
-  getRole
+export {
+  getRole,
+  updateRole
 }

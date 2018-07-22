@@ -1,10 +1,10 @@
-const mongoose = require('mongoose')
-const schemaConfig = require('../config/db-schema')
-const commonMethods = require('./common')
-const formatArticle = require('../util/article').formatArticle
-const isEmptyStr = require('../util/format').isEmpStr
+import mongoose from 'mongoose'
+import dbConfig from '../../config/db-schema'
+import commonMethods from './common'
+import {formatArticle} from '../util/article'
+
 const Schema = mongoose.Schema
-const articleConfig = schemaConfig.article
+const articleConfig = dbConfig.article
 
 let ArticleSchema = new Schema(articleConfig.structure, articleConfig.collection)
 
@@ -25,4 +25,4 @@ ArticleSchema.methods.deleteArticle = commonMethods.$delete('article')
 
 const model = mongoose.model('article', ArticleSchema)
 
-module.exports = model
+export default model

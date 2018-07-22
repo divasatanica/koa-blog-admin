@@ -1,4 +1,4 @@
-const isEmptyStr = require('./format').isEmpStr
+import {isEmptyStr} from './format'
 
 /**
  * 对文章数据进行格式化处理
@@ -22,6 +22,6 @@ function formatArticle (article, target = {}) {
   return target
 }
 
-module.exports = {
+export {
   formatArticle
 }

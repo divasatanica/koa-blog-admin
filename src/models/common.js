@@ -1,5 +1,6 @@
-const mongoose = require('mongoose')
-const isEmptyStr = require('../util/format').isEmpStr
+import mongoose from 'mongoose'
+import {isEmptyStr} from '../util/format'
+
 
 // 复用mongoose的各个模型可公用的方法
 
@@ -54,26 +55,28 @@ const $update = function (col) {
 }
 
 const $delete = function (col) {
-  return new Promise((resolve, reject) => {
-    if (query && !isEmptyStr(query.id)) {
-      this.model(col).findByIdAndRemove(query.id, (err, res) => {
-        if (err) {
-          reject(err)
-        }
-        const response = {
-          status: 200,
-          success: 1,
-          message: 'Successfully Deleted',
-          data: res
-        }
-        resolve(response)
-      })
-    }
-  })
+  return function (query) {
+    return new Promise((resolve, reject) => {
+      if (query && !isEmptyStr(query.id)) {
+        this.model(col).findByIdAndRemove(query.id, (err, res) => {
+          if (err) {
+            reject(err)
+          }
+          const response = {
+            status: 200,
+            success: 1,
+            message: 'Successfully Deleted',
+            data: res
+          }
+          resolve(response)
+        })
+      }
+    })
+  }
 }
 
-module.exports = {
+export {
+  $delete,
   $find,
-  $update,
-  $delete
+  $update
 }

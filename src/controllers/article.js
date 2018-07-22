@@ -1,7 +1,9 @@
-const articleModel = require('../models/index').article
-const timeStampGen = require('../util/time').timeStampgen
-const marked = require('marked')
-const isEmptyStr = require('../util/format').isEmpStr
+import models from '../models/index'
+import {timeStampGen} from '../util/time'
+import marked from 'marked'
+import {isEmptyStr} from '../util/format'
+
+const articleModel = models.article
 
 const getArticle = async ctx => {
   const article = new articleModel()
@@ -62,7 +64,7 @@ const deleteArticle = async ctx => {
   ctx.body = await newDelete.deleteArticle(query)
 }
 
-module.exports = {
+export {
   getArticle,
   postArticle,
   putArticle,

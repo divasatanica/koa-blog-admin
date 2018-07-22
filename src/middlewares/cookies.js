@@ -15,6 +15,6 @@ const setInCookies = (keyName, options) => {
   }
 }
 
-module.exports = {
+export {
   setInCookies
 }
