@@ -25,7 +25,7 @@ function isMail (str) {
  * @returns {Boolean} 是否为合乎规范的用户名
  */
 function isUserName (str) {
-  return (/^[a-zA-Z0-9_-\u4e00-\u9fa5]{1,20}$/.test(str)) && !isEmpStr(str)
+  return (/^[a-zA-Z\u4e00-\u9fa5][a-zA-Z0-9_-\u4e00-\u9fa5]{1,20}$/.test(str)) && !isEmpStr(str)
 }
 
 export {
