@@ -3,7 +3,7 @@
  * @param count 当天上传文章的计数(0-999)
  * @returns 11位数字时间戳
  */
-function timeStampgen (count) {
+function timeStampGen (count) {
   let date = new Date()
   let dateStamp = String(date.getFullYear()) + (date.getMonth() > 8 ? '' : '0') + String(date.getMonth() + 1) + (date.getDate() > 9 ? '' : '0') + String(date.getDate())
   let countStamp
@@ -27,7 +27,7 @@ function tomorrowGen () {
   return new Date(dateStr)
 }
 
-module.exports = {
-  timeStampgen,
+export {
+  timeStampGen,
   tomorrowGen
 }

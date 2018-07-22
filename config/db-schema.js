@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 // structure 为数据的字段结构，collection为该种数据对应的数据库表名
@@ -43,4 +43,4 @@ const dbSchema = {
   }
 }
 
-module.exports = dbSchema
+export default dbSchema

@@ -1,0 +1,11 @@
+{
+  "presets": ["env"],
+  "plugins": [
+    "transform-es2015-modules-umd",
+    "add-module-exports",
+    "syntax-async-functions",
+    "transform-async-to-generator",
+    "transform-runtime"
+  ],
+  "auxiliaryCommentBefore": "istanbul ignore next"
+}

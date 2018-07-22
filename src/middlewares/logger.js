@@ -12,7 +12,7 @@ const logInConsole = async (ctx, next) => {
   console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
 }
 
-module.exports = {
+export {
   logInConsole,
   logInHeader
 }

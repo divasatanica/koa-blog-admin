@@ -1,9 +1,10 @@
-const mongoose = require('mongoose')
-const schemaConfig = require('../config/db-schema')
-const commonMethods = require('./common')
-const isEmptyStr = require('../util/format').isEmpStr
+import mongoose from 'mongoose'
+import dbConfig from '../../config/db-schema'
+import commonMethods from './common'
+import {isEmptyStr} from '../util/format'
+
 const Schema = mongoose.Schema
-const roleConfig = schemaConfig.role
+const roleConfig = dbConfig.role
 
 let RoleSchema = new Schema(roleConfig.structure, roleConfig.collection)
 
@@ -53,4 +54,4 @@ RoleSchema.methods.updateRole = commonMethods.$update('role')
 
 const model = mongoose.model('role', RoleSchema)
 
-module.exports = model
+export default model
