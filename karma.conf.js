@@ -24,10 +24,9 @@ module.exports = function(config) {
       'karma-chai',
       'karma-mocha',
       'karma-babel-preprocessor',
-      'karma-mocha-reporter',
-      'karma-chrome-launcher',
-      'karma-phantomjs-launcher'
-    ],
+      'karma-mocha-reporter'].concat(process.env.TEST_ENV === 'dev' ?
+      ['karma-chrome-launcher'] :
+      ['karma-phantomjs-launcher']),
 
 
     // list of files / patterns to exclude
@@ -68,7 +67,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: NODE_ENV === 'dev' ? ['Chrome'] : ['PhantomJS'],
+    browsers: (process.env.TEST_ENV === 'dev') ? ['Chrome'] : ['PhantomJS'],
 
 
     // Continuous Integration mode
