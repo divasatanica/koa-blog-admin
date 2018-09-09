@@ -4,7 +4,7 @@
   "description": "A Blog admin backend with Koa2",
   "main": "index.js",
   "scripts": {
-    "test": "karma start",
+    "test": "karma start --single-run",
     "start": "nodemon --inspect ./ --exec babel-node"
   },
   "author": "coma",
