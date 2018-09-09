@@ -39,7 +39,7 @@
     "karma-cli": "^1.0.1",
     "karma-coverage": "^1.1.2",
     "karma-mocha": "^1.3.0",
-    "karma-phantomjs-launcher": "@latest",
+    "karma-phantomjs-launcher": "1.0.4",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.3",
     "phantomjs": "^2.1.7"
