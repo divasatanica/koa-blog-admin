@@ -24,7 +24,8 @@ module.exports = function(config) {
       'karma-chai',
       'karma-mocha',
       'karma-babel-preprocessor',
-      'karma-mocha-reporter'
+      'karma-mocha-reporter',
+      'karma-chrome-launcher'
     ],
 
 
