@@ -25,7 +25,8 @@ module.exports = function(config) {
       'karma-mocha',
       'karma-babel-preprocessor',
       'karma-mocha-reporter',
-      'karma-chrome-launcher'
+      'karma-chrome-launcher',
+      'karma-phantomjs-launcher'
     ],
 
 
@@ -67,14 +68,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome', 'ChromeNoSandbox'],
-
-    customLaunchers: {
-      ChromeNoSandbox: {
-        base: 'Chrome',
-        flags: ['--no-sandbox']
-      }
-    },
+    browsers: NODE_ENV === 'dev' ? ['Chrome'] : ['PhantomJS'],
 
 
     // Continuous Integration mode

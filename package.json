@@ -4,7 +4,8 @@
   "description": "A Blog admin backend with Koa2",
   "main": "index.js",
   "scripts": {
-    "test": "karma start --single-run",
+    "test": "cross-env NODE_ENV=prod karma start --single-run",
+    "test-dev": "cross-env NODE_ENV=dev karma start --single-run",
     "start": "nodemon --inspect ./ --exec babel-node"
   },
   "author": "coma",
@@ -30,6 +31,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
+    "cross-env": "^5.2.0",
     "karma": "^2.0.4",
     "karma-babel-preprocessor": "^7.0.0",
     "karma-chai": "^0.1.0",
@@ -37,7 +39,9 @@
     "karma-cli": "^1.0.1",
     "karma-coverage": "^1.1.2",
     "karma-mocha": "^1.3.0",
+    "karma-phantomjs-launcher": "@latest",
     "mocha": "^5.2.0",
-    "nodemon": "^1.18.3"
+    "nodemon": "^1.18.3",
+    "phantomjs": "^2.1.7"
   }
 }
