@@ -20,7 +20,7 @@ const dbSchema = {
   },
   role: {
     structure: {
-      '_id': String,
+      'auth': String,
       'name': String,
       'contain': [{
         type: Schema.Types.String,

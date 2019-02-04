@@ -17,6 +17,7 @@ import {setInCookies} from './src/middlewares/cookies'
 import {handler as errorHandler} from './src/middlewares/error-handler'
 import {logInConsole, logInHeader} from './src/middlewares/logger'
 import {tomorrowGen} from './src/util/time'
+import {respSuccess, respFail} from './src/shared/respGen'
 
 
 const PORT = baseConfig.PORT
@@ -32,6 +33,8 @@ mongoose.connect(DB_URL, {
 })
 
 global.objectid = objectid
+global.respFail = respFail
+global.respSuccess = respSuccess
 // global.db = mongoose.createConnection('mongodb://localhost:27017/blog')
 
 // Error Handling
